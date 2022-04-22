@@ -78,7 +78,7 @@ Prerequisites:
       fig.tight_layout()
       plt.show()
       
-      
+![dhdt example](example_dhdt.png?raw=true "dhdt example plot")
 
 * `plot_umod` plots velocity magnitude from a BISICLES plot file
 
@@ -95,3 +95,5 @@ Prerequisites:
       fig.set_size_inches(8, 8)
       fig.tight_layout()
       plt.show()
+
+![umod example](example_umod.png?raw=true "umod example plot")
