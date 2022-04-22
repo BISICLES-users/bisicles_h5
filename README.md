@@ -17,9 +17,6 @@ Prerequisites:
 
       file = [path/to/plot...]
       names, n = get_varnames(file)
-     
-  example output:
-  
       print(names)
       
       ['thickness',
@@ -44,9 +41,6 @@ Prerequisites:
       path = [path/to/directory]
       files = glob(os.path.join(path, "plot.*"))
       df = amr_meansdf(files)
-      
-  example output:
-  
       print(df)
       
                   thickness       xVel       yVel   Z_surface       Z_base  dThickness/dt  \
