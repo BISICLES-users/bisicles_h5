@@ -15,6 +15,7 @@ Prerequisites:
 
 * `get_varnames` unpacks variable names in a plot file and the number of components, returning a list and integer. 
 
+      file = [path/to/plot...]
       names, n = get_varnames(file)
      
   example output:
@@ -64,5 +65,33 @@ Prerequisites:
 
 * `plot_b5` plots a variable from a BISICLES plot file
 
+      file = '[path/to/plot...]'
+      dhdt =  b5.bisicles_var(file, 5)
 
-* `plot_umod` plot velocity magnitude from a BISICLES plot file
+      fig, ax, pcm = plot_b5(dhdt, 'seismic', -5, 5)
+      cb = fig.colorbar(pcm, orientation = 'vertical', pad=0.05, shrink = 0.7)
+      cb.set_label(r'Rate of Thickness Change ($\mathregular{ma^{-1}}$)')
+      cb.ax.tick_params(labelsize=12) 
+      plt.title("Example plot")
+      ax.set_aspect('equal','box')
+      fig.set_size_inches(8, 8)
+      fig.tight_layout()
+      plt.show()
+      
+      
+
+* `plot_umod` plots velocity magnitude from a BISICLES plot file
+
+      file = '[path/to/plot...]'
+      xvel =  b5.bisicles_var(file, 1)
+      yvel =  b5.bisicles_var(file, 2)
+
+      fig, ax, pcm = plot_umod(xvel,yvel,'jet',0,4)
+      cb = fig.colorbar(pcm, orientation = 'vertical', pad=0.05, shrink = 0.7)
+      cb.set_label(r'Velocity ($\mathregular{ma^{-1}}$)')
+      cb.ax.tick_params(labelsize=12) 
+      plt.title("Example plot")
+      ax.set_aspect('equal','box')
+      fig.set_size_inches(8, 8)
+      fig.tight_layout()
+      plt.show()
